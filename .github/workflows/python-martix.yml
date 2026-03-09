@@ -5,7 +5,7 @@ jobs:
     validate:
         runs-on: ubuntu-latest
         strategy:
-            fail-fast: true
+            fail-fast: true #if true:will run for all others otherwise if job gets failed,stops there
             matrix:
                  python-version: ["3.11", "3.12", "3.13"]    
         steps:
