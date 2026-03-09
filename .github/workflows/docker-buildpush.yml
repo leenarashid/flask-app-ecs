@@ -15,6 +15,14 @@ jobs:
 
           - name: Debug username
             run: echo "DockerHub user = ${{ vars.DOCKERHUB_USERNAME }}"
+
+          - name: Debug Docker tags
+            run: |
+              echo "${{ secrets.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.ref_name }}"
+              echo "${{ secrets.DOCKERHUB_USERNAME }}/flask-app-ecs:latest"
+              echo "${{ secrets.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.sha }}"
+
+
           - name: Building & Pushing to Docker Hub
             uses: docker/build-push-action@v6
             with:
