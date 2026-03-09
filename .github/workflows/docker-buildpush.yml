@@ -18,7 +18,7 @@ jobs:
 
           - name: Debug Docker tags
             run:  |
-              echo "${{ secrets.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.ref_name }}, ${{ secrets.DOCKERHUB_USERNAME }}/flask-app-ecs:latest, ${{ secrets.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.sha }}"
+              echo "${{ vars.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.ref_name }}, ${{ vars.DOCKERHUB_USERNAME }}/flask-app-ecs:latest, ${{ vars.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.sha }}"
 
 
           - name: Building & Pushing to Docker Hub
@@ -26,4 +26,4 @@ jobs:
             with:
                 context: .
                 push: true
-                tags: ${{ vars.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.ref_name }}, ${{ vars.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.sha }}
+                tags: ${{ vars.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.ref_name }},${{ vars.DOCKERHUB_USERNAME }}/flask-app-ecs:${{ github.sha }}
