@@ -2,31 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Food Ordering App</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Mini YouTube App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff0000;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: white;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #ff0000;
+        }
+    </style>
 </head>
 <body>
-
-    <div class="container">
-        <div class="search-bar">
-            <img src="./images/app-logo.png" class="logo" onclick="window.location.reload()">
-            <input type="text" id="search" placeholder="Search restaurant by names or tags.." title="Type in a name">
-        </div>
-        <div class="filters">
-            <select name="dropown" id="sortby" onchange="sortby(event)">
-                <option disabled>Sort By</option>
-                <option value="rating">Sort By RATING</option>
-                <option value="eta">Sort By ETA</option>
-              </select>
-            <button class="show-fav">Your Favourites</button>
-        </div>
-        <div class="restaurants"></div>
-        <div class="errorNotify"></div>
-    </div>
-
-    <script src="./js/app.js"></script>
-    
+    <header>Mini YouTube App</header>
+    <main>
+        <h2>Videos</h2>
+        <ul>
+            {% for video in videos %}
+            <li>
+                <a href="{{ video.url }}" target="_blank">{{ video.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
 </body>
 </html>
