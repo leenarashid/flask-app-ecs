@@ -19,5 +19,5 @@ jobs:
             - name: Installing Dependencies
               run: pip install -r requirements.txt
               
-            - name: Lint Job
+            - name: Linting Job
               run: flake8  
