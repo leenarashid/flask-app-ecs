@@ -10,5 +10,6 @@ jobs:
     steps:
     - name: Checking out  the Code
       uses: actions/checkout@v4
-    - name: Deploying with docker compose
-      run: docker-compose -f ./flask-ecs-app/flask-app-ecs/docker-compose.yml up -d --build
+    - name: Deploy with Docker Compose
+      working-directory: ./flask-app-ecs
+      run: docker-compose up -d --build
