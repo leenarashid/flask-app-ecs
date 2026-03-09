@@ -20,5 +20,5 @@ jobs:
                 context: .
                 push: true
                 tags: |
-                    ${{ vars.DOCKERHUB_USER }}/github-actions-repo:${{ github.ref_name }} 
-                    ${{ vars.DOCKERHUB_USER }}/github-actions-repo:${{ github.sha }}    
+                    ${{ vars.DOCKERHUB_USER }}/flask-app-ecs:${{ github.ref_name }} 
+                    ${{ vars.DOCKERHUB_USER }}/flask-app-ecs:${{ github.sha }}    
