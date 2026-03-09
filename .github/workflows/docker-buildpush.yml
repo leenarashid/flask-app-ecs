@@ -1,6 +1,7 @@
 name: Docker Build-Push
 on: 
-    workflow_dispatch #To avoid hacking always always run such workflows on push or workflow_dispatch NOT on pull.
+  push:  
+    branches: [main]    #To avoid hacking always always run such workflows on push or workflow_dispatch NOT on pull.
 jobs:
     build-and-push:
         runs-on: ubuntu-latest
