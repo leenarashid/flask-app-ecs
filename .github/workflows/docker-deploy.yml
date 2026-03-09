@@ -11,5 +11,5 @@ jobs:
     - name: Checking out  the Code
       uses: actions/checkout@v4
     - name: Deploy with Docker Compose
-      working-directory: ./flask-app-ecs
+      working-directory: .
       run: docker-compose up -d --build
