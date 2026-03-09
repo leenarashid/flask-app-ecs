@@ -10,5 +10,5 @@ jobs:
     steps:
     - name: Checking out  the Code
       uses: actions/checkout@v4
-    - name: Deploy with docker compose
+    - name: Deploying with docker compose
       run: docker-compose up -d --build
