@@ -10,7 +10,7 @@ jobs:
           - name: Docker Build
             uses: docker/login-action@v3
             with:
-                username: ${{ vars.DOCKERHUB_USERNAME }}
+                username: ${{ vars.DOCKERHUB_USERNAME }} #docker username must be same of docker hub.
                 password: ${{ secrets.DOCKERHUB_TOKEN }}     
 
 
@@ -20,5 +20,5 @@ jobs:
                 context: .
                 push: true
                 tags: |
-                    ${{ vars.DOCKERHUB_USER }}/github-actions-repo:${{ github.ref }}
+                    ${{ vars.DOCKERHUB_USER }}/github-actions-repo:${{ github.ref_name }} 
                     ${{ vars.DOCKERHUB_USER }}/github-actions-repo:${{ github.sha }}    
