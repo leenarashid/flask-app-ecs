@@ -14,7 +14,7 @@ jobs:
                 username: ${{ secrets.DOCKERHUB_USERNAME }} #docker username must be "secret" and value will be same of docker hub username
                 password: ${{ secrets.DOCKERHUB_TOKEN }}     
 
-          - name: Debug username
+          - name: Debuging username
             run: echo "DockerHub user = ${{ secrets.DOCKERHUB_USERNAME }}"
 
           - name: Debug Docker tags
