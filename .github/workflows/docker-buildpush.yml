@@ -15,7 +15,7 @@ jobs:
 
           - name: Debug username
             run: echo "DockerHub user = ${{ vars.DOCKERHUB_USERNAME }}"
-          - name: Build & Push to DockerHub
+          - name: Building & Pushing to DockerHub
             uses: docker/build-push-action@v6
             with:
                 context: .
