@@ -11,4 +11,9 @@ jobs:
     - name: Checking out  the Code
       uses: actions/checkout@v4
     - name: Deploy with Docker Compose
-      run: docker-compose up -d --build
+      run: docker-compose up -d --build --force-recreate
+
+      #KEY TAKEAWAYS: Must be careful about runnina above docker compose command
+      # The above force recreate command makes the containers work again n again
+
+      

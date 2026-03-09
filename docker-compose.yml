@@ -6,4 +6,12 @@ services:
        - "80:80"
 
 
-       
+    #KEY TAKEAWAYS: docer.io and dccker compose must be installed  on the runner.
+    # sudo apt-get update && sudo apt-get install docker.io docker-compose-v2 -y
+    #After installation do docker ps and docker-compose ps
+    # for ${DOCKERHUB_USERNAME} create .env file in the same directory as of docker compose
+    # Give permissions to ubuntu to docker
+    #IF still giving issues regarding permissions do sudo reboot or restart instance
+    #*****************************************************************************#
+    #Docker compose setup : - name: xyz uses: docker/setup-compose-actions@v2   can also be added to avaoid docker compose issues
+
